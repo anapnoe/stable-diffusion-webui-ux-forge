@@ -188,8 +188,6 @@ def check_and_create_dev():
         if os.path.exists(dev_mode_file):
             os.remove(dev_mode_file)
 
-
-
 def run_vite_build():
     try:
         # Call 'npm run build' 
@@ -207,7 +205,7 @@ def on_ui_tabs():
     log_messages = []
     
     with gr.Blocks(analytics_enabled=False) as anapnoe_sd_uiux_core:
-        textbox = gr.Textbox(elm_id="pylogger", lines=10, label="Log Output", interactive=False)
+        textbox = gr.Textbox(lines=10, label="Log Output", interactive=False)  # Rimosso elm_id
 
         logger = StreamToLogger(log_messages)
         sys.stdout = logger  # Redirect stdout to our custom logger

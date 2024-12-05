@@ -510,7 +510,7 @@ def configure_for_tests():
     if "--disable-nan-check" not in sys.argv:
         sys.argv.append("--disable-nan-check")
 
-    os.environ['COMMANDLINE_ARGS'] = ""
+    os.environ['COMMANDLINE_ARGS'] = "--opt-sdp-attention --no-half-vae"
 
 
 def configure_forge_reference_checkout(a1111_home: Path):
