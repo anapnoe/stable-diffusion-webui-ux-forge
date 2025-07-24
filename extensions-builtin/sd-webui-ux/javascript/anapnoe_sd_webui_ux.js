@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
     };
     const loadScript = async() => {
-        const scriptPath = './file=extensions/sd-webui-ux/javascript/src/index.js';
+        const scriptPath = './file=extensions-builtin/sd-webui-ux/javascript/src/index.js';
         const exists = await scriptExists(scriptPath);
         if (exists) {
-            window.basePath = './file=extensions/sd-webui-ux/';
+            window.basePath = './file=extensions-builtin/sd-webui-ux/';
             const script = document.createElement('script');
             script.type = 'module';
-            script.src = './file=extensions/sd-webui-ux/javascript/src/index.js';
+            script.src = './file=extensions-builtin/sd-webui-ux/javascript/src/index.js';
             document.head.appendChild(script);
             return;
         }
