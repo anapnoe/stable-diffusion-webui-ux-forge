@@ -1,0 +1,125 @@
+<div id="accordion-aside" iconTrigger="#acc-arrow-button" class="accordion accordion-vertical no-drag">
+    <div class="accordion-bar">
+        <button id="acc-arrow-button" class="ae-button">
+            <div id="mask-icon-acc-arrow" class="mask-icon accordion-icon icon-arrow-down"></div>
+        </button>
+        <div id="sidebar_secondary_tabs" class="flexbox col">
+            <button class="ae-button">
+                <a title="Use via API" target="_blank" href="/docs">
+                    <div title="Use via API" class="mask-icon icon-rocket"></div>
+                    <span>Use via API</span>
+                </a>
+            </button>
+            <button class="ae-button">
+                <a id="github-project-link" title="Github" target="_blank" href="https://github.com/anapnoe/stable-diffusion-webui-ux">
+                    <div class="mask-icon icon-github"></div>
+                    <span>Github</span>
+                </a>
+            </button>
+            <button class="ae-button">
+                <a title="Gradio" target="_blank" href="https://gradio.app">
+                    <div class="mask-icon icon-gradio"></div>
+                    <span>Gradio</span>
+                </a>
+            </button>
+            <button class="ae-button">
+                <a title="Reload UI" href="/" onclick="javascript:gradioApp().getElementById('settings_restart_gradio').click(); return false">
+                    <div class="mask-icon icon-reload"></div>
+                    <span>Reload UI</span>
+                </a>
+            </button>
+            <div class="flexbox col spacer-v"></div>
+        </div>
+        <div class="flexbox col"></div>
+        <div id="sidebar_tabs" class="flexbox col shrink">
+            <button title="Quick Settings" tabItemId="#layout-quicksettings" tabGroup="extra_networks" id="btn_quick_settings" class="xtabs-tab">
+                <div class="mask-icon icon-quicksettings"></div>
+                <span>Quick Settings</span>
+            </button>
+            <button title="PNG Info" tabItemId="#layout-pnginfo" tabGroup="extra_networks" id="ptn_pnginfo" class="xtabs-tab">
+                <div class="mask-icon icon-pnginfo"></div>
+                <span>PNG Info</span>
+            </button>
+            <button title="Checkpoint Merger" tabItemId="#layout-model-merger" tabGroup="extra_networks" onclick="mainTabs(this, '#tab_model_merger')" class="xtabs-tab">
+                <div class="mask-icon icon-model-merger"></div>
+                <span>Checkpoint Merger</span>
+            </button>
+            <button title="Theme Editor" id="btn_theme_editor" tabItemId="#layout-theme" tabGroup="extra_networks" class="xtabs-tab hidden">
+                <div id="mask-icon-theme" class="mask-icon icon-theme"></div>
+                <span>Theme</span>
+            </button>
+            <div class="flexbox col spacer-v"></div>
+            <button title="Extensions" tabItemId="#layout-extensions" tabGroup="extra_networks" id="btn_extensions" class="xtabs-tab">
+                <div class="mask-icon icon-extensions"></div>
+                <span>Extensions</span>
+            </button>
+            <button title="Settings" tabItemId="#layout-settings" tabGroup="extra_networks" id="btn_settings" class="xtabs-tab">
+                <div class="mask-icon icon-settings"></div>
+                <span>Settings</span>
+            </button>
+            <button title="Console Log" tabItemId="#layout-console-log" tabGroup="extra_networks" id="btn_console" class="xtabs-tab">
+                <div class="mask-icon icon-terminal"></div>
+                <span>Console Log</span>
+            </button>
+        </div>
+        <div id="sidebar_extra_networks_db" class="flexbox col shrink">
+            <button title="Checkpoints" id="checkpoints_nav" tabItemId="#layout_db_checkpoints" tabGroup="extra_networks" class="xtabs-tab" active="true">
+                <div class="mask-icon icon-checkpoints"></div>
+                <span>Checkpoints</span>
+            </button>
+            <button title="Textual Inversion" id="textual_inversion_nav" tabItemId="#layout_db_textual_inversion" tabGroup="extra_networks" class="xtabs-tab">
+                <div class="mask-icon icon-textual-inversion"></div>
+                <span>Textual Inversion</span>
+            </button>
+            <button title="LORA" id="lora_nav" tabItemId="#layout_db_lora" tabGroup="extra_networks" class="xtabs-tab">
+                <div class="mask-icon icon-lora"></div>
+                <span>LORA</span>
+            </button>
+            <button title="Hypernetworks" id="hypernetwork_nav" tabItemId="#layout_db_hypernetworks" tabGroup="extra_networks" class="xtabs-tab">
+                <div class="mask-icon icon-hypernetworks"></div>
+                <span>Hypernetworks</span>
+            </button>
+            <button title="Styles" tabItemId="#layout_db_styles" tabGroup="extra_networks" id="sd_styles_nav" class="xtabs-tab hidden">
+                <div class="mask-icon icon-stylez"></div>
+                <span>Styles</span>
+            </button>
+            <button title="Images" tabItemId="#layout_db_output_images" tabGroup="extra_networks" id="sd_output_images_nav" class="xtabs-tab hidden">
+                <div class="mask-icon icon-gallery"></div>
+                <span>Browser</span>
+            </button>
+            <div class="flexbox col spacer-v"></div>
+            <div id="civitai_explorer_nav" class="flexbox col hidden">
+                <button title="Civitai Images" id="civitai_nav_images" tabItemId="#civitai_images_tabitem" tabGroup="extra_networks" class="xtabs-tab">
+                    <div class="mask-icon icon-civitai-images"></div>
+                    <span>Images</span>
+                </button>
+                <button title="Civitai Models" id="civitai_nav_models" tabItemId="#civitai_models_tabitem" tabGroup="extra_networks" class="xtabs-tab">
+                    <div class="mask-icon icon-civitai-models"></div>
+                    <span>Models</span>
+                </button>
+                <div class="flexbox col spacer-v"></div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="accordion-container">
+        <div id="template-pnginfo" class="template"></div>
+        <div id="template-quicksettings" class="template"></div>
+        <div id="template-extensions" class="template"></div>
+        <div id="template-settings" class="template"></div>
+        <div id="template-model-merger" class="template"></div>
+        <div id="template-console-log" class="template"></div>
+        
+        <div id="template-civitai-explorer" class="template"></div>
+        <div template="template-extra-networks-db" key="checkpoints" id="exn_checkpoints" class="template"></div>
+        <div template="template-extra-networks-db" key="textual_inversion" id="exn_textual_inversion" class="template"></div>
+        <div template="template-extra-networks-db" key="hypernetworks" id="exn_hypernetworks" class="template"></div>
+        <div template="template-extra-networks-db" key="lora" id="exn_lora" class="template"></div>
+        <div id="layout-theme" class="flexbox col padding">
+            <div show-button="#btn_theme_editor" data-selector="[id^='tab_ui_theme'] > div" data-parent-selector="gradio-app" class="portal no-bg"></div>
+        </div>
+
+        <div id="template-styles-db" key="styles" id="sd_styles" class="template"></div>
+        <div id="template-styles-db" key="output_images" id="sd_output_images" class="template"></div>
+    </div>
+</div>
