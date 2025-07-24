@@ -1,7 +1,7 @@
 # Stable Diffusion WebUI UX Forge
 A bespoke, highly adaptable, blazing fast user interface for Stable Diffusion, engineered for unmatched user experience and performance.
 
-Stable Diffusion WebUI UX Forge implements backend optimizations to enhance the UX extension. It removes all Extra Networks templates from the backend architecture and replaces the legacy file-based metadata system (file.img + file.json) with a modern SQLite database. This upgrade enables efficient indexing, searching, and fetching for all Extra Networks – including Checkpoints, LoRAs, Textual Inversions, and Hypernetworks
+Stable Diffusion WebUI UX Forge implements backend optimizations to enhance the UX extension. It removes the "Extra Networks" templates served from the backend and replaces the legacy file-based metadata system (file.img + file.json) with a modern SQLite database. This upgrade enables efficient indexing, searching, and fetching for all Extra Networks – including Checkpoints, LoRAs, Textual Inversions, and Hypernetworks
 
 [💖 Your Support Makes a Difference! 💖](https://buymeacoffee.com/dayanbayah)
 
