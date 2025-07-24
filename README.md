@@ -83,13 +83,6 @@ SD webUI UX implements **event delegation** + **virtualized grid** for O(1) perf
 - Flat memory profile (≈50MB heap regardless of model assets library size)  
 - O(1) event handling complexity  
 - Instant scrolling with 100K+ assets   
-
-## Installation
-- **Open the Extensions tab in SD-webui.**
-- **Select the Install from URL option.**
-- **Enter `https://github.com/anapnoe/sd-webui-ux.git`**
-- **Click on the Install button.**
-- **Wait for the installation to complete and click on Apply and restart UI.**
   
 ## Todo
 - [ ] Separate and organize CSS into individual files (in progress).
