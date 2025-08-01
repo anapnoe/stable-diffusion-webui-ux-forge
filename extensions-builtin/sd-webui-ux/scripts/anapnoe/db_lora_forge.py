@@ -92,7 +92,7 @@ class ExtraNetworksPageLora(ui_extra_networks.ExtraNetworksPage):
             "tags": "", 
             "local_preview": f"{path}.{shared.opts.samples_format}", 
             "metadata_exists": bool(lora_on_disk.metadata), 
-            "sd_version": "unknown", 
+            "sd_version": "Unknown", 
             "type": "LORA", 
             "filesize": stats.st_size,
             "date_created": int(mtime), 
